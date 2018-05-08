@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-aling: center">Proyecto IONIC</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+
+
+    <ion-item>
+      <ion-label stacked>Usuario:</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Correo electronico"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!loginForm.controls.email.valid &&
+          loginForm.controls.email.dirty">
+      <p class="error-message">Por favor ingrese un correo valido.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Contraseña:</ion-label>
+      <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!loginForm.controls.password.valid
+            && loginForm.controls.password.dirty">
+      <p class="error-message">La contraseña debe de tener minimo 6 caracteres.</p>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="dark" block (click)="entrar()" [disabled]="!loginForm.valid" color="dark">Entrar&nbsp;&nbsp;<ion-icon name="ios-contacts"></ion-icon></button>
+    <button ion-button color="dark" block (click)="goToRegister()">Registrarse&nbsp;&nbsp;<ion-icon name="ios-contacts"></ion-icon></button>
+  </div>
+
+</ion-content>

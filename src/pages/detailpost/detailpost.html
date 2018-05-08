@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title mode="ios">Detail post</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-item text-wrap>
+        <p>
+          <strong>User Id:</strong>
+          {{post.userId}}
+        </p>
+        <hr>
+        <p>
+          <strong>Id:</strong>
+          {{post.id}}
+        </p>
+        <hr>
+        <p>
+          <strong>Title:</strong>
+          {{post.title}}
+        </p>
+        <hr>
+        <p>
+          <strong>Body: </strong>
+          {{post.body}}
+        </p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

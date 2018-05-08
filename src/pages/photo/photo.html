@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title mode="ios">Picture</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button block (click)="takePicture()">Take a picture</button>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col col-auto>
+        <img *ngIf="image" width="400" height="400" [src]="image" />
+        <p *ngIf="!image">No picture taken.</p>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

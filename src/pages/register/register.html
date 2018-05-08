@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title mode="ios">Signup</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <form [formGroup]="signupForm">
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!signupForm.controls.email.valid
+            && signupForm.controls.email.dirty">
+            <p class="error-message">Please enter a valid email.</p>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!signupForm.controls.password.valid
+            && signupForm.controls.password.dirty">
+            <p class="error-message">Your password needs more than 6 characters.</p>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Confirm password</ion-label>
+            <ion-input type="password" formControlName="confirmPass"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!signupForm.controls.confirmPass.valid
+            && signupForm.controls.confirmPass.dirty">
+            <p class="error-message">Must match the password.</p>
+          </ion-item>
+          <ion-item>
+            <button block ion-button (click)="registerEntrar()" [disabled]="!signupForm.valid" color="primary">Signup</button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </form>
+  </ion-card>
+</ion-content>

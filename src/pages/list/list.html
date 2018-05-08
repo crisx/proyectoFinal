@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title mode="ios">Posts list</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let post of postsList$">
+    <ion-card-content (click)="detailPost(post)">
+      {{post.title | uppercase}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
